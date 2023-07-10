@@ -42,5 +42,11 @@ class Welcome extends CI_Controller {
         $data['genre'] = $this->Genre_model->getAllGenre();
         $this->load->view('signup',$data);
     }
+    public function deco(){
+        $this->load->library('session');
+        $this->session->unset_userdata('user');
+        redirect(base_url('welcome'));
+    }
+
 
 }
