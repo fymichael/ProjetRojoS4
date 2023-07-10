@@ -10,6 +10,8 @@ create table utilisateur(
     email VARCHAR(100) not null, 
     mot_de_passe VARCHAR(30) not null,
     id_genre integer ,
+    status integer,
+    date_naissance date,
     foreign key(id_genre) references genre(id_genre)
 );
 create table objectif(

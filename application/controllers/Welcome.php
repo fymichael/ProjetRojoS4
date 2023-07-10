@@ -6,13 +6,12 @@ class Welcome extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->library('session');
+        $this->load->model("user_model");
     }
     public function checkUtilisateur(){
         $email=$this->input->post('email');
         $password=$this->input->post('password');
-        $this->load->model("user_model");
         $user = $this->user_model->getOneUser($email,$password);
-        echo $user[0]['status'];
         if ($user!=null){
             if ($user[0]['status']==10){
                 redirect('welcome/admin');
@@ -20,7 +19,6 @@ class Welcome extends CI_Controller {
             else if ($user[0]['status']==1){
                 $this->load->library('session');
                 $this->session->set_userdata('id',$user[0]['id_utilisateur']);
-                echo $this->session->userdata('id')."session";
                 redirect('welcome/acceuil');
             }
         }
@@ -29,17 +27,20 @@ class Welcome extends CI_Controller {
     }
 
     public function acceuil(){
+        $data['contents'] = 'content';
+        $user = $this->user_model->getUserConnected($_SESSION['id']);
+        $data['user'] = $user;
         if ($this->session->userdata('id')==null)redirect('welcome');
-        else $this->load->view('templates/acceuil');
+        else $this->load->view('Front/front', $data);
     }
 
     public function index(){
-        $this->load->view('templates/login');
+        $this->load->view('login');
     }
     public function redirect_to_signup(){
         $this->load->model("Genre_model");
         $data['genre'] = $this->Genre_model->getAllGenre();
-        $this->load->view('templates/signup',$data);
+        $this->load->view('signup',$data);
     }
 
 }

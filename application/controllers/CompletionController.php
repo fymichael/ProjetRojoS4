@@ -14,13 +14,13 @@ class CompletionController extends CI_Controller
         $listObjectif = $this->Objectifs_model->getAllObjectifs();
         $data['contents'] = 'completion';
         $data['listObjectif'] = $listObjectif;
-        $this->load->view('Front/front',$data);
+        $this->load->view('Front/front', $data);
     }
 
     public function addCompletion()
     { 
         if ($this->input->get('taille') && $this->input->get('poids') && $this->input->get('idObjectif') && $this->input->get('objectif')) {
-            $id_user = $this->session()->get_userdata('id');
+            $id_user = $_SESSION['id'];
             $taille = $this->input->get('taille');
             $poids = $this->input->get('poids');
             $idObjectif = $this->input->get('idObjectif');

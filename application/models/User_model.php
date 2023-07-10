@@ -13,9 +13,18 @@ class User_model extends CI_Model {
         }
         return $array;
     }
+    public function getUserConnected($id_user){
+        $string="select * from utilisateur where id_utilisateur = %d";
+        $string = sprintf($string, $id_user);
+        $query = $this->db->query($string);
+        $array=[];
+        foreach ($query->result_array() as $row){
+            $array[]=$row;
+        }
+        return $array;
+    }
     public function insertUser($nom_user,$email,$mdp,$idgenre,$status,$dtn){
         $string=sprintf("insert into utilisateur values (default,'%s','%s','%s',%d,%d,'%s')",$nom_user,$email,$mdp,$idgenre,$status,$dtn);
-        // echo $string;
         $this->db->query($string);
     }
 
