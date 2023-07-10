@@ -20,6 +20,7 @@ create table details_user (
     id_details_user integer auto_increment primary key not null,
     id_utilisateur integer not null,
     taille double precision,
+    poids double precision,
     id_objectif integer ,
     objectif double precision,
     foreign key (id_utilisateur) references utilisateur(id_utilisateur),

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Objectifs_model extends CI_Model
 {
     public function getAllObjectifs(){
-        $req = "select * from objectifs";
+        $req = "select * from objectif";
         $query = $this->db->query($req);
         $objectifs = array();
         foreach ($query->result_array() as $row) {

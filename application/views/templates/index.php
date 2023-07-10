@@ -166,10 +166,10 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Menu</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.html">Dashboard 1</a>
+                                    <a href="<?php echo su('CompletionController/completion'); ?>">Completion</a>
                                 </li>
                                 <li>
                                     <a href="index2.html">Dashboard 2</a>
