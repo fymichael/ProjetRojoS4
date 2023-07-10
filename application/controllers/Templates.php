@@ -20,7 +20,11 @@ class Templates extends CI_Controller {
 	 */
 	public function index()
 	{
+<<<<<<< Updated upstream
 		$this->load->view('welcome_message');
+=======
+		$this->load->view('templates/inscription');
+>>>>>>> Stashed changes
 		
 	}		
 }
