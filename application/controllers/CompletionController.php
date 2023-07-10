@@ -19,10 +19,9 @@ class CompletionController extends CI_Controller
 
     public function addCompletion()
     { 
-        $taille = $this->input->get('taille');
-        echo $taille;
         if ($this->input->get('taille') && $this->input->get('poids') && $this->input->get('idObjectif') && $this->input->get('objectif')) {
-            echo 'sdf';
+            $id_user = $this->session()->get_userdata('id');
+            $taille = $this->input->get('taille');
             $poids = $this->input->get('poids');
             $idObjectif = $this->input->get('idObjectif');
             $objectif = $this->input->get('objectif');
