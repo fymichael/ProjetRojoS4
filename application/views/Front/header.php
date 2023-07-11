@@ -161,6 +161,7 @@
                     <img src="<?php echo su('assets/icon/kaly.png');?>" alt="Cool Admin" />
                 </a>
             </div>
+            
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
@@ -169,7 +170,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Menu</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="<?php echo su('CompletionController/completion'); ?>"> Completion </a>
+                                    <a href="<?php echo su('CompletionController/completion'); ?>">Completion </a>
                                 </li>
                                 <li>
                                     <a href="<?php echo su('CompletionController/getValueForCompletion'); ?>">Liste regimes </a>

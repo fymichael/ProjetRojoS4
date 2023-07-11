@@ -181,13 +181,10 @@
                                 <li>
                                     <a href="<?php echo su('PlatsController/getAllPlats'); ?>"> Plats </a>
                                 </li>
-                                <li>
-                                    <a href="<?php echo su('CodeController/getAllCode'); ?>"> Code </a>
-                                </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo su('BoardController/board'); ?>"><i class="fas fa-chart-bar"></i>Tableau de bord</a>
+                            <a href="#"><i class="fas fa-chart-bar"></i>Tableau de bord</a>
                         </li>
                     </ul>
                 </nav>
