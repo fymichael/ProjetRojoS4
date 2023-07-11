@@ -86,18 +86,26 @@
                                 <td>
                                     <div class="table-data__info">
                                         <span>
-                                            <a href="#"><?php echo $listValidateCode[$i]['code']; ?></a>
+                                            <a href="#">
+                                                <?php echo $listValidateCode[$i]['code']; ?>
+                                            </a>
                                         </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <span><?php echo $listValidateCode[$i]['montant']; ?></span>
+                                    <span>
+                                        <?php echo $listValidateCode[$i]['montant']; ?>
+                                    </span>
                                 </td>
                                 <td>
-                                    <span><?php echo $this->Code_model->getEtatLettre($listValidateCode[$i]['etat']); ?></span>
+                                    <span>
+                                        <?php echo $this->Code_model->getEtatLettre($listValidateCode[$i]['etat']); ?>
+                                    </span>
                                 </td>
                                 <td>
-                                    <span class="role user"><a href="<?php echo bu('CodeController/validate/'.$listValidateCode[$i]['id_code']); ?>" style="color: white;"> valider </a></span>
+                                    <span class="role user"><a
+                                            href="<?php echo bu('CodeController/validate/' . $listValidateCode[$i]['id_code']); ?>"
+                                            style="color: white;"> valider </a></span>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -105,8 +113,13 @@
                 </table>
             </div>
             <div class="user-data__footer">
-                <button class="au-btn au-btn-load">load more</button>
+                <button class="au-btn au-btn-load" onclick="refreshPage()">Actualiser</button>
             </div>
+            <script>
+                function refreshPage() {
+                    location.reload();
+                }
+            </script>
         </div>
     </div>
 </div>
