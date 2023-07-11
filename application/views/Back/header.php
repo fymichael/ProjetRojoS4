@@ -20,6 +20,7 @@
         media="all">
     <link href="<?php echo bu('assets/vendor/mdi-font/css/material-design-iconic-font.min.css'); ?>" rel="stylesheet"
         media="all">
+    <link href="<?php echo bu('assets/css/home.css') ?>" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
     <link href="<?php echo bu('assets/vendor/bootstrap-4.1/bootstrap.min.css'); ?>" rel="stylesheet" media="all">
@@ -187,7 +188,8 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo su('BoardController/board'); ?>"><i class="fas fa-chart-bar"></i>Tableau de bord</a>
+                            <a href="<?php echo su('BoardController/board'); ?>"><i class="fas fa-chart-bar"></i>Tableau
+                                de bord</a>
                         </li>
                     </ul>
                 </nav>

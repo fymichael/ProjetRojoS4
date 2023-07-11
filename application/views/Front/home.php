@@ -1,16 +1,11 @@
-<section>
+<div class="main-content col-md-9" style="margin-left: 300px;">
+    <div class="section__content section__content--p30">
         <div class="container mt-5">
             <div class="row home-text">
                 <div class="col-md-6">
                     <h1>
                         Bienvenue dans votre espace <br> Front Office.
                     </h1>
-                    <p class="mt-4">
-                        Ici, vous avez un contrôle total sur la gestion de vos terrains.
-                        Vous pourrez parcourir rapidement et facilement l'ensemble de vos terrains.
-                        Nous vous permettons de mieux gérer votre terrain. Commençons par voir tous vos terrains.
-                    </p>
-                    <a href="{{ route('list-fieldFoc') }}" class="btn btn-warning mt-3">Voir les terrains</a>
                 </div>
                 <div class="col-md-6 image-place">
                     <img src="{{ asset('imageDesign/home-client.jpg') }}" alt="Image d'accueil">
@@ -52,4 +47,5 @@
             </div>
 
         </div>
-    </section>
+    </div>
+</div>
