@@ -55,10 +55,14 @@ class Welcome extends CI_Controller
     public function redirect_to_signup()
     {
         $this->load->model("Genre_model");
-        $user = $this->user_model->getUserConnected($_SESSION['id']);
-        $data['user'] = $user;
         $data['genre'] = $this->Genre_model->getAllGenre();
         $this->load->view('signup', $data);
     }
+    public function deco(){
+        $this->load->library('session');
+        $this->session->unset_userdata('user');
+        redirect(base_url('welcome'));
+    }
+
 
 }

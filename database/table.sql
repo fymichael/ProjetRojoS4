@@ -1,5 +1,5 @@
-create database regime;
-use regime;
+
+use nancycompte_projets4;
 create table genre(
     id_genre integer auto_increment primary key not null , 
     nom_genre VARCHAR(15) not null
@@ -33,6 +33,13 @@ create table historique(
     id_details_user integer,
     date_historique date,
     foreign key (id_details_user) references details_user(id_details_user)
+);
+create table formule(
+    id_formule integer auto_increment primary key not null,
+    id_objectif integer ,
+    poids double precision ,
+    duree integer,
+    foreign key (id_objectif) references objectif(id_objectif)
 );
 
 create table categorie_plats(
@@ -69,6 +76,14 @@ create table details_regime(
     foreign key (id_regime) references regime(id_regime),
     foreign key (id_plats) references plats(id_plats),
     foreign key (id_sports) references sports(id_sports)
+);
+create table regime_user(
+    id_regime_user integer auto_increment primary key not null,
+    id_regime integer ,
+    id_utilisateur integer ,
+    date_regime date,
+    foreign key (id_regime) references regime(id_regime),
+    foreign key (id_utilisateur) references utilisateur(id_utilisateur)
 );
 
 create table porte_feuille(

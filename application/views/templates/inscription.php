@@ -43,31 +43,37 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="<?=base_url("assets/images/icon/kaly.png")?>" alt="CoolAdmin" width="100px" height="50px">
+                                <img src="<?php echo bu('assets/images/icon/logo.png');?>" alt="CoolAdmin">
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="<?php echo su('welcome/checkUtilisateur'); ?>" method="post">
+                            <form action="" method="post">
+                            <div class="form-group">
+                                    <label>Nom</label>
+                                    <input class="au-input au-input--full" type="text" name="nom" placeholder="Votre nom">
+                                </div>
+                                <div class="form-group">
+                                    <label>Votre date de naissance</label>
+                                    <input class="au-input au-input--full" type="date" name="dateNaissance" placeholder="Votre date de naissance">
+                                </div>
+                                <div class="form-group">
+                                    <label>Genre</label>
+                                    <select class="au-input au-input--full" name="genre">
+                                        <option value="">Homme</option>
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label>Votre Email</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email" value="toky@gmail.com">
+                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <label>Mot de passe</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Votre mot de passe" value="toky1234">
+                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
-                                <div style="height: 40px">
+                                
 
-                                </div>
-
-                                <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">Se connecter</button>
-
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">S'incrire</button>
                             </form>
-                            <div class="register-link">
-                                <p>
-                                    <a href="<?php echo su('welcome/redirect_to_signup'); ?>">S'inscrire</a>
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,7 +82,6 @@
 
     </div>
 
-    <!-- Jquery JS-->
     <script src="<?php echo bu('assets/vendor/jquery-3.2.1.min.js') ?>"></script>
     <!-- Bootstrap JS-->
     <script src="<?php echo bu('assets/vendor/bootstrap-4.1/popper.min.js'); ?>"></script>
@@ -99,6 +104,7 @@
 
     <!-- Main JS-->
     <script src="<?php echo bu('assets/js/main.js'); ?>"></script>
+
 </body>
 
 </html>
