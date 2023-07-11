@@ -14,6 +14,12 @@ class CodeController extends CI_Controller
         $this->load->model("Objectifs_model");
         $this->load->model("CategoriePlats_model");
     }
+    public function validate($id_code)
+    {
+        //$nom_Code, $prix_Code, $id_Code, $id_categorie_Code
+        $this->Code_model->validateCode($id_code);
+        redirect('CodeController/getAllCode');
+    }
     public function delete($id_Code)
     {
         $this->Code_model->deleteCode($id_Code);
@@ -32,19 +38,20 @@ class CodeController extends CI_Controller
     // }
     public function addCode()
     {
-        if ($this->input->get('Code') && $this->input->get('idCatCode') && $this->input->get('prix')) {
-            $Code = $this->input->get('Code');
-            $idCatCode = $this->input->get('idCatCode');
-            $prix = $this->input->get('prix');
+        if ($this->input->get('code') && $this->input->get('montant')) {
+            $Code = $this->input->get('code');
+            $montant = $this->input->get('montant');
 
-            $this->Code_model->addCode($Code, $prix, $idCatCode);
+            $this->Code_model->addCode($Code, $montant);
             redirect('CodeController/getAllCode');
         }
     }
     public function getAllCode()
     {
         $listCode = $this->Code_model->getAllCode();
+        $listValidateCode = $this->Code_model->getCodeEnAttente();
         $data['listCode'] = $listCode;
+        $data['listValidateCode'] = $listValidateCode;
         $data['contents'] = 'Code';
         $this->load->view('Back/back', $data);
     }
