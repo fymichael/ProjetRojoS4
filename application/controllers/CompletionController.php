@@ -14,6 +14,9 @@ class CompletionController extends CI_Controller
         $this->load->model("user_model");
     }
 
+
+
+    
     public function completion(){
         $listObjectif = $this->Objectifs_model->getAllObjectifs();
         $data['contents'] = 'completion';
