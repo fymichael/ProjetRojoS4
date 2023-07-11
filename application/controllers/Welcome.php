@@ -1,46 +1,64 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->load->library('session');
         $this->load->model("user_model");
     }
-    public function checkUtilisateur(){
-        $email=$this->input->post('email');
-        $password=$this->input->post('password');
-        $user = $this->user_model->getOneUser($email,$password);
-        if ($user!=null){
-            if ($user[0]['status']==10){
+    public function checkUtilisateur()
+    {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $user = $this->user_model->getOneUser($email, $password);
+        if ($user != null) {
+            if ($user[0]['status'] == 10) {
                 redirect('welcome/admin');
-            }
-            else if ($user[0]['status']==1){
+            } else if ($user[0]['status'] == 1) {
                 $this->load->library('session');
-                $this->session->set_userdata('id',$user[0]['id_utilisateur']);
+                $this->session->set_userdata('id', $user[0]['id_utilisateur']);
                 redirect('welcome/acceuil');
             }
         }
         // redirect(base_url('welcome'));
 
     }
-
-    public function acceuil(){
+    public function admin()
+    {
         $data['contents'] = 'content';
         $user = $this->user_model->getUserConnected($_SESSION['id']);
         $data['user'] = $user;
-        if ($this->session->userdata('id')==null)redirect('welcome');
-        else $this->load->view('Front/front', $data);
+        if ($this->session->userdata('id') == null)
+            redirect('welcome');
+        else
+            $this->load->view('Back/back', $data);
+    }
+    public function acceuil()
+    {
+        $data['contents'] = 'content';
+        $user = $this->user_model->getUserConnected($_SESSION['id']);
+        $data['user'] = $user;
+        if ($this->session->userdata('id') == null)
+            redirect('welcome');
+        else
+            $this->load->view('Front/front', $data);
     }
 
-    public function index(){
+    public function index()
+    {
         $this->load->view('login');
     }
-    public function redirect_to_signup(){
+    public function redirect_to_signup()
+    {
         $this->load->model("Genre_model");
+        $user = $this->user_model->getUserConnected($_SESSION['id']);
+        $data['user'] = $user;
         $data['genre'] = $this->Genre_model->getAllGenre();
-        $this->load->view('signup',$data);
+        $this->load->view('signup', $data);
     }
 
 }

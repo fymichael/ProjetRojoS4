@@ -8,6 +8,7 @@ class CompletionController extends CI_Controller
         parent::__construct();
         $this->load->model('Objectifs_model');
         $this->load->model('Completion_model');
+        $this->load->model("user_model");
     }
 
     public function completion(){
