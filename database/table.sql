@@ -1,4 +1,4 @@
-create database regime;
+ create database regime;
 use regime;
 create table genre(
     id_genre integer auto_increment primary key not null , 
@@ -33,11 +33,54 @@ create table historique(
     date_historique date,
     foreign key (id_details_user) references details_user(id_details_user)
 );
+create table formule(
+    id_formule integer auto_increment primary key not null,
+    id_objectif integer ,
+    poids double precision ,
+    duree integer,
+    foreign key (id_objectif) references objectif(id_objectif)
+);
+create table categorie_plats(
+    id_categorie_plats integer auto_increment primary key not null,
+    nom_categorie_plats varchar(20)
+);
 
-insert into genre values(null , 'Homme');
-insert into genre values(null , 'Femme');
+create table plats(
+    id_plats integer auto_increment primary key not null,
+    id_categorie_plats integer,
+    nom_plats varchar(20),
+    prix_plats double precision,
+    image varchar(30),
+    foreign key (id_categorie_plats) references categorie_plats(id_categorie_plats)
+);
 
-insert into objectif values (null, 'augmenter le poids');
-insert into objectif values (null, 'reduire le poids');
-insert into objectif values (null, 'maintenir le poids');
-insert into utilisateur values(null , 'Toky' , 'toky@gmail.com','toky1234',1,1,'2005-08-10');
+create table sports(
+    id_sports integer auto_increment primary key not null,
+    nom_sports varchar(20),
+    prix_sports double precision
+);
+
+create table regime(
+    id_regime integer auto_increment primary key not null,
+    id_objectif integer,
+    nom_regime varchar(20),
+    foreign key (id_objectif) references objectif(id_objectif)
+);
+
+create table details_regime(
+    id_details_regime integer auto_increment primary key not null,
+    id_regime integer,
+    id_plats integer,
+    id_sports integer,
+    foreign key (id_regime) references regime(id_regime),
+    foreign key (id_plats) references plats(id_plats),
+    foreign key (id_sports) references sports(id_sports)
+);
+create table regime_user(
+    id_regime_user integer auto_increment primary key not null,
+    id_regime integer ,
+    id_utilisateur integer ,
+    date_regime date,
+    foreign key (id_regime) references regime(id_regime),
+    foreign key (id_utilisateur) references utilisateur(id_utilisateur)
+);
