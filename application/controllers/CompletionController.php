@@ -11,6 +11,7 @@ class CompletionController extends CI_Controller
         $this->load->model('historique_model');
         $this->load->model('regime_model');
 
+        $this->load->model("user_model");
     }
 
     public function completion(){

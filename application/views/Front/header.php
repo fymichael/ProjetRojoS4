@@ -308,7 +308,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="account-wrap">
+                                <!-- <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
                                             <img src="<?php echo bu('/assets/images/icon/avatar-01.jpg'); ?>" alt="<?php echo $user[0]['nom_utilisateur']; ?>" />
@@ -350,7 +350,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

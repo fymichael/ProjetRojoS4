@@ -28,6 +28,7 @@ create table details_user (
     foreign key (id_utilisateur) references utilisateur(id_utilisateur),
     foreign key (id_objectif) references objectif(id_objectif)
 );
+
 create table historique(
     id_details_user integer,
     date_historique date,
@@ -40,6 +41,7 @@ create table formule(
     duree integer,
     foreign key (id_objectif) references objectif(id_objectif)
 );
+
 create table categorie_plats(
     id_categorie_plats integer auto_increment primary key not null,
     nom_categorie_plats varchar(20)
@@ -50,7 +52,6 @@ create table plats(
     id_categorie_plats integer,
     nom_plats varchar(20),
     prix_plats double precision,
-    image varchar(30),
     foreign key (id_categorie_plats) references categorie_plats(id_categorie_plats)
 );
 
