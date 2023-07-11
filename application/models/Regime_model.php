@@ -21,7 +21,7 @@ class Regime_model extends CI_Model
         $result = $this->db->query($req);
         $idRegime = 0;
         foreach ($result->result_array() as $row) {
-            $idRegime = $row['id'];
+            $idRegime = $row['id_regime'];
         }
         return $idRegime;
     }

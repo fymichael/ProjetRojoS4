@@ -11,7 +11,8 @@ class RegimeController extends CI_Controller
         $this->load->model("Plats_model");
         $this->load->model("Objectifs_model");
     }
-    public function delete($id_regime){
+    public function delete($id_regime)
+    {
         $this->Regime_model->deleteRegime($id_regime);
         redirect('RegimeController/getAllRegime');
     }
@@ -32,19 +33,33 @@ class RegimeController extends CI_Controller
             $idObjectif = $this->input->get('idObjectif');
 
             $this->Regime_model->addRegime($regime, $idObjectif);
+
             redirect('RegimeController/getAllRegime');
         }
     }
-    public function getAllRegime(){
+    public function addDetailRegime()
+    {
+        if ($this->input->get('idPlats') && $this->input->get('idSports')) {
+            $plats = $this->input->get('idPlats');
+            $sports = $this->input->get('idSports');
+            $idRegime = $this->input->get('regimeId');
+
+            $this->Regime_model->addDetailsRegime($idRegime, $plats, $sports);
+
+            redirect('RegimeController/getAllRegime');
+        }
+    }
+    public function getAllRegime()
+    {
         $listRegime = $this->Regime_model->getAllRegime();
+        $listObjectif = $this->Objectifs_model->getAllObjectifs();
         $listPlats = $this->Plats_model->getAllPlats();
         $listSports = $this->Sports_model->getAllSports();
-        $listObjectif = $this->Objectifs_model->getAllObjectifs();
-        $data['listSports'] = $listSports;
-        $data['listPlats'] = $listPlats;
         $data['listRegime'] = $listRegime;
         $data['listObjectif'] = $listObjectif;
         $data['contents'] = 'regime';
+        $data['listSports'] = $listSports;
+        $data['listPlats'] = $listPlats;
         $this->load->view('Back/back', $data);
     }
 }

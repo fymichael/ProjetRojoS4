@@ -70,3 +70,17 @@ create table details_regime(
     foreign key (id_plats) references plats(id_plats),
     foreign key (id_sports) references sports(id_sports)
 );
+
+create table porte_feuille(
+    id_porte_feuille integer auto_increment primary key not null,
+    id_user integer,
+    montant double precision,
+    etat integer,
+    foreign key (id_user) references utilisateur(id_utilisateur)
+);
+create table code (
+    id_code integer auto_increment primary key not null,
+    code varchar(15),
+    montant double precision,
+    etat integer
+);
