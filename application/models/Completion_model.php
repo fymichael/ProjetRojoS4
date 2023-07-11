@@ -26,6 +26,7 @@ class Completion_model extends CI_Model
     public function getById($id_user){
         $string="select * from details_user where id_utilisateur = %d";
         $string = sprintf($string,$id_user);
+        echo $string;
         $query = $this->db->query($string);
         $array=[];
         foreach ($query->result_array() as $row){
