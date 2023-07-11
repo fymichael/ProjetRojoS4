@@ -6,7 +6,7 @@
                     <div class="au-card m-b-30">
                         <div class="au-card-inner">
                             <span class="div__ul__li__span div__ul__li__span--titre">Total d'argent reçu : </span>
-                            <span class="div__ul_li_span div__ul__li__span--argent">120 000 Ar</span>
+                            <span class="div__ul_li_span div__ul__li__span--argent">29 000 Ar</span>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                 // };
                 const dataset2 = {
                     label: "Montant obtenues",
-                    data: [50000,60000,40000,55000,100000],
+                    data: [10000,8000,6000,5000],
                     backgroundColor: "rgba(255, 99, 132, 0.5)",
                     borderColor: "rgba(255, 99, 132, 1)",
                     borderWidth: 1

@@ -17,7 +17,7 @@ class Welcome extends CI_Controller
         $user = $this->user_model->getOneUser($email, $password);
         if ($user != null) {
             if ($user[0]['status'] == 10) {
-                redirect('welcome/admin');
+                redirect('BoardController/board');
             } else if ($user[0]['status'] == 1) {
                 $this->load->library('session');
                 $this->session->set_userdata('id', $user[0]['id_utilisateur']);
