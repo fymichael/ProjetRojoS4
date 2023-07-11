@@ -29,7 +29,7 @@ class Welcome extends CI_Controller
     }
     public function admin()
     {
-        $data['contents'] = 'home';
+        $data['contents'] = 'content';
         $user = $this->user_model->getUserConnected($_SESSION['id']);
         $data['user'] = $user;
         if ($this->session->userdata('id') == null)
@@ -39,7 +39,7 @@ class Welcome extends CI_Controller
     }
     public function acceuil()
     {
-        $data['contents'] = 'home';
+        $data['contents'] = 'content';
         $user = $this->user_model->getUserConnected($_SESSION['id']);
         $data['user'] = $user;
         if ($this->session->userdata('id') == null)
