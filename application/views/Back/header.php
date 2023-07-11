@@ -181,6 +181,9 @@
                                 <li>
                                     <a href="<?php echo su('PlatsController/getAllPlats'); ?>"> Plats </a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo su('CodeController/getAllCode'); ?>"> Code </a>
+                                </li>
                             </ul>
                         </li>
                         <li>
