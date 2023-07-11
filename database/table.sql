@@ -1,5 +1,5 @@
- create database regime;
-use regime;
+
+use nancycompte_projets4;
 create table genre(
     id_genre integer auto_increment primary key not null , 
     nom_genre VARCHAR(15) not null

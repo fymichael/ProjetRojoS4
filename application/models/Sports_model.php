@@ -9,7 +9,7 @@ class Sports_model extends CI_Model
     public function updateSports($nom_sports, $prix_sports, $id_sports){
         $req = "update sports set nom_sports = '%s', prix_sports = '%s' where id_sports = %d";
         $req = sprintf($req, $nom_sports, $prix_sports, $id_sports);
-        echo $req;
+        // echo $req;
         $this->db->query($req);
     }
     public function getAllSports(){

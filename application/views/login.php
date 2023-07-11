@@ -43,7 +43,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="<?=base_url("assets/images/icon/logo.png")?>" alt="CoolAdmin">
+                                <img src="<?=base_url("assets/images/icon/kaly.png")?>" alt="CoolAdmin" width="100px" height="50px">
                             </a>
                         </div>
                         <div class="login-form">
@@ -60,7 +60,7 @@
 
                                 </div>
 
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Se connecter</button>
+                                <button class="au-btn au-btn--block au-btn--blue m-b-20" type="submit">Se connecter</button>
 
                             </form>
                             <div class="register-link">

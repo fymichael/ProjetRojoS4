@@ -1,6 +1,6 @@
-<div class="table-responsive table-responsive-data2">
+<div class="table-responsive table-responsive-data2 m-t-100" style="margin-left: 600px;">
                         <h5>La valeur du regime avec la duree de votre traitemet : <?php echo $vola;?>Ar</h5>
-                            <table class="table table-data2">
+                            <table class="table table-data2" style="width: 500px;">
                                 <thead>
                                     <tr>
                                         <th>Nom du plat</th>

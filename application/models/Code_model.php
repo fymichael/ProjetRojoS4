@@ -7,12 +7,21 @@ class Code_model extends CI_Model
         $req = sprintf($req, $nom_Code, $prix_Code);
         $this->db->query($req);
     }
-    public function updateCode($nom_Code, $prix_Code, $id_Code, $etat)
-    {
-        $req = "update Code set code = '%s', montant = %d, etat=%d where id_Code = %d";
-        $req = sprintf($req, $nom_Code, $prix_Code, $etat,$id_Code);
-        echo $req;
-        $this->db->query($req);
+    public function getOneCode($code){
+        $request = "SELECT * FROM code WHERE code =%d";
+        $request=sprintf($request,$code);
+        $query = $this->db->query($request);
+        $array=[];
+        foreach($query->result_array() as $row){
+            $array[] = $row;
+        }
+        return $array;
+    }
+    public function updateCode($code,$etat){
+        $request = "UPDATE code set etat =%d  WHERE code ='%s'";
+        $request=sprintf($request,$etat,$code);
+        // echo $request;
+        $this->db->query($request);
     }
     public function getAllCode()
     {

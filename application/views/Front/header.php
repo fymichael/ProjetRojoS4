@@ -158,7 +158,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="<?php echo su('assets/icon/kaly.png');?>" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -173,6 +173,12 @@
                                 </li>
                                 <li>
                                     <a href="<?php echo su('CompletionController/getValueForCompletion'); ?>">Liste regimes </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo su('codeController'); ?>">Acheter credit </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo su('RegimeController/getRegimes'); ?>">Mon regime </a>
                                 </li>
                             </ul>
                         </li>
@@ -308,49 +314,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="<?php echo bu('/assets/images/icon/avatar-01.jpg'); ?>" alt="<?php echo $user[0]['nom_utilisateur']; ?>" />
-                                        </div>
-                                        <div class="content">
-                                            <a class="js-acc-btn" href="#"><?php echo $user[0]['nom_utilisateur']; ?></a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="<?php echo bu('/assets/images/icon/avatar-01.jpg'); ?>" alt="<?php echo $user[0]['nom_utilisateur']; ?>" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#"><?php echo $user[0]['nom_utilisateur']; ?></a>
-                                                    </h5>
-                                                    <span class="email"><?php echo $user[0]['email']; ?></span>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="<?=base_url("welcome/deco") ?>">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>

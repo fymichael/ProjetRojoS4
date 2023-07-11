@@ -10,7 +10,7 @@ class Completion_model extends CI_Model
     public function addCompletion($id_user,$taille, $poids, $idObjectif, $objectif){
         $req = "insert into details_user values (null, %d, %d, %d, %d, %d)";
         $req = sprintf($req, $id_user, $taille, $poids, $idObjectif, $objectif);
-        echo $req;
+        // echo $req;
         $this->db->query($req);
     }
     public function getOneCompletion($id_user,$taille, $poids, $idObjectif, $objectif){

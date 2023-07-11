@@ -10,7 +10,7 @@
                                         <div>
                                             <div>
                                                 <div class="text p-t-30">
-                                                    <a href="<?php echo su('CompletionController/getDetails/'.$regime[$i]['id_regime'].$duree);?>"><img src="<?php echo su('/assets/images/c1.jpg');?>" style="width: 300px; height: 200px;"></a>
+                                                    <a href="<?php echo su('CompletionController/getDetails/'.$regime[$i]['id_regime'].'/'.$duree);?>"><img src="<?php echo su('/assets/images/c1.jpg');?>" style="width: 300px; height: 200px;"></a>
                                                 </div>
                                             </div>
                                             <div>
