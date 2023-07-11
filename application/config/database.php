@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
     'dsn'   => '',
-    'hostname' => 'mysql-nancycompte.alwaysdata.net',
-    'username' => '320296_projets4',
-    'password' => 'mdpbaseprojects4',
-    'database' => 'nancycompte_projets4',
+    'hostname' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'database' => 'regime',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
